@@ -9,28 +9,86 @@ Each test is dict with
 
 
 TESTS = {
-    "Basics": [
+    "0. Basics": [
         {
-            "input": [3, 2],
-            "answer": 5,
-            "explanation": "3+2=?"
+            "input": ["Programming", "Gram Ring Mop"],
+            "answer": True,
         },
         {
-            "input": [5, 7],
-            "answer": 12,
-            "explanation": "5+7=?"
+            "input": ["Hello", "Ole Ho"],
+            "answer": True,
+        },
+        {
+            "input": ["Kyoto", "Tokyo"],
+            "answer": True,
         }
+
     ],
-    "Extra": [
+    "1. Extra": [
         {
-            "input": [6, 3],
-            "answer": 9,
-            "explanation": "6+3=?"
+            "input": ["Hamlet", "Amleth"],
+            "answer": True,
         },
         {
-            "input": [6, 7],
-            "answer": 13,
-            "explanation": "6+7=?"
-        }
+            "input": ["Kings Lead Hat", "Talking Heads"],
+            "answer": True,
+        },
+        {
+            "input": ["abcdefghijklmnopqrstuvwxyz", "Cwm fjord bank glyphs vext quiz"],
+            "answer": True,
+        },
+        {
+            "input": ["Listen", "Silent"],
+            "answer": True,
+        },
+        {
+            "input": ["A telephone girl", "Repeating allo"],
+            "answer": False,
+        },
+        {
+            "input": ["Waitress", "The stew Sir"],
+            "answer": False,
+        },
+        {
+            "input": ["The Morse Code", "There Come Dots"],
+            "answer": False,
+        },
+
+    ],
+    "2. Edge": [
+        {
+            "input": ["a", "a"],
+            "answer": True,
+        },
+        {
+            "input": ["x", "X"],
+            "answer": True,
+        },
+        {
+            "input": ["A O X", "x o a"],
+            "answer": True,
+        },
+        {
+            "input": ["  Hi  all  ", "all hi"],
+            "answer": True,
+        },
+        {
+            "input": ["a", "z"],
+            "answer": False,
+        },
+        {
+            "input": ["abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTU",
+                      'UTSRQPONMLKJIHGFEDCBAzyxwvutsrqponmlkjihgfedcbaZYXWVUTSRQPONMLKJIHGFEDCBAzyxwvutsrqponmlkjihgfedcba'],
+            "answer": True,
+        },
+        {
+            "input": ["bcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTU",
+                      'TSRQPONMLKJIHGFEDCBAzyxwvutsrqponmlkjihgfedcbaZYXWVUTSRQPONMLKJIHGFEDCBAzyxwvutsrqponmlkjihgfedcba'],
+            "answer": False,
+        },
+        {
+            "input": ["aaaaaaaaabbb", "ba"],
+            "answer": False,
+        },
     ]
 }

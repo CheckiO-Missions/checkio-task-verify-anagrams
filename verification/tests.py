@@ -16,8 +16,9 @@ TESTS = {
         },
         {
             "input": ["Hello", "Ole Ho"],
-            "answer": True,
+            "answer": False,
         },
+
         {
             "input": ["Kyoto", "Tokyo"],
             "answer": True,

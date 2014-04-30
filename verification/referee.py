@@ -45,5 +45,6 @@ api.add_listener(
         # checker=None,  # checkers.float.comparison(2)
         # add_allowed_modules=[],
         # add_close_builtins=[],
-        # remove_allowed_modules=[]
+        # remove_allowed_modules=[],
+        function_name="verify_anagrams"
     ).on_ready)

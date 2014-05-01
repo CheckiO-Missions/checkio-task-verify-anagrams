@@ -86,8 +86,9 @@ requirejs(['ext_editor_1', 'jquery_190', 'raphael_210'],
                 $content.find('.answer').remove();
             }
 
-            //Your code here about test explanation animation
-            //$content.find(".explanation").html("Something text for example");
+            var $explanation = $content.find(".explanation");
+
+
             //
             //
             //

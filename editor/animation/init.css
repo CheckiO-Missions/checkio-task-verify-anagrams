@@ -58,6 +58,27 @@
     border-color: #de0202;
 }
 
+.animation-content .explanation {
+    word-wrap: break-word;
+    word-break: break-all;
+    font-family: Verdana, Arial, sans-serif;
+    font-weight: bold;
+    color: #294270;
+    font-size: 18px;
+    padding-left: 10px;
+    padding-right: 10px;
+
+}
+
+.animation-content .explanation div {
+    padding-bottom: 5px;
+    padding-top: 5px;
+}
+
+.animation-content .explanation div span.highlight-letter {
+    color: #F0801A;
+}
+
 .tryit-content {
     background-color: #dfe8f7;
     font-family: Verdana, Arial, helvetica, sans-serif;

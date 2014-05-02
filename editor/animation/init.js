@@ -40,10 +40,16 @@ requirejs(['ext_editor_1', 'jquery_190', 'raphael_210'],
             }
 
             var checkioInput = data.in;
-            var checkioInputStr = checkioInput[0] + ", " + checkioInput[1];
+            if (checkioInput) {
+                var checkioInputStr = JSON.stringify(checkioInput[0]) + ", " + JSON.stringify(checkioInput[1]);
+            }
+            else {
+                checkioInputStr = "None";
+            }
+            console.log(data);
 
             var failError = function(dError) {
-                $content.find('.call').html('Fail: verify_anagrams(' + checkioInputStr + ')');
+                $content.find('.call').html('Fail:<br>verify_anagrams(' + checkioInputStr + ')');
                 $content.find('.output').html(dError.replace(/\n/g, ","));
 
                 $content.find('.output').addClass('error');
@@ -70,31 +76,55 @@ requirejs(['ext_editor_1', 'jquery_190', 'raphael_210'],
 
 
             //if you need additional info from tests (if exists)
-            var explanation = data.ext["explanation"];
+            var common = data.ext["common"];
 
             $content.find('.output').html('&nbsp;Your result:&nbsp;' + JSON.stringify(userResult));
 
             if (!result) {
-                $content.find('.call').html('Fail: verify_anagrams(' + checkioInputStr + ')');
+                $content.find('.call').html('Fail:<br>verify_anagrams(' + checkioInputStr + ')');
                 $content.find('.answer').html('Right result:&nbsp;' + JSON.stringify(rightResult));
                 $content.find('.answer').addClass('error');
                 $content.find('.output').addClass('error');
                 $content.find('.call').addClass('error');
             }
             else {
-                $content.find('.call').html('Pass: verify_anagrams(' + checkioInputStr + ')');
+                $content.find('.call').html('Pass:<br>verify_anagrams(' + checkioInputStr + ')');
                 $content.find('.answer').remove();
             }
 
             var $explanation = $content.find(".explanation");
 
+            var $first = $explanation.find(".first");
+            var $second = $explanation.find(".second");
 
-            //
-            //
-            //
-            //
-            //
+            var fillLetters = function($div, word) {
+                for (var i = 0; i < word.length; i++) {
+                    var letter = word[i];
+                    var $span = $("<span></span>").addClass(letter.toLowerCase());
+                    $span.text(letter);
+                    $div.append($span);
+                }
+            };
 
+            fillLetters($first, checkioInput[0]);
+            fillLetters($second, checkioInput[1]);
+
+            var paintLetter = function($where, letter) {
+                var $letter = $where.find("." + letter).eq(0);
+                $letter.removeClass();
+                $letter.addClass("highlight-letter");
+            };
+
+            var step = 200;
+            for (var i = 0; i < common.length; i++) {
+                setTimeout(function() {
+                    var l = common[i];
+                    return function() {
+                        paintLetter($first, l);
+                        paintLetter($second, l);
+                    }
+                }(), step * i);
+            }
 
             this_e.setAnimationHeight($content.height() + 60);
 

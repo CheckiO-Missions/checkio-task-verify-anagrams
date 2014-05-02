@@ -16,7 +16,7 @@ TESTS = {
             "common": "programming"
         },
         {
-            "input": ["Hello", "Ole Ho"],
+            "input": ["Hello", "Ole Oh"],
             "answer": False,
             "common": "helo"
         },

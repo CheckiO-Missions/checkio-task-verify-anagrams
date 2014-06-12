@@ -39,7 +39,7 @@ requirejs(['ext_editor_1', 'jquery_190', 'raphael_210'],
                 return false;
             }
 
-            var checkioInput = data.in;
+            var checkioInput = data.in || ["Programming", "Gram Ring Mop"];
             if (checkioInput) {
                 var checkioInputStr = JSON.stringify(checkioInput[0]) + ", " + JSON.stringify(checkioInput[1]);
             }

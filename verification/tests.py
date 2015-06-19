@@ -40,6 +40,12 @@ TESTS = {
             "common": "kingsleadhat"
         },
         {
+            "input": ["Hello", "Hell"],
+            "answer": False,
+            "common": "hel"
+        },
+        
+        {
             "input": ["abcdefghijklmnopqrstuvwxyz", "Cwm fjord bank glyphs vext quiz"],
             "answer": True,
             "common": "abcdefghijklmnopqrstuvwxyz"

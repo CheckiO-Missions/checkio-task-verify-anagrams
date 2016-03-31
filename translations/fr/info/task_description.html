@@ -1,0 +1,48 @@
+<p>
+    Une anagramme est un mot ou une phrase obtenus en mélangeant toutes les lettres d'un autre mot ou d'une phrase.
+    La liste exacte des lettres est conservée à l'identique, mais l'on ne tient compte ni de la casse des lettres 
+    (minuscules / majuscules), ni des espaces.
+    Par exemple: "Gram Ring Mop" et "Programming" sont des anagrammes, de même que "Albert Einstein" et "Rien n est etabli". 
+    Mais "Hello" et "Ole Oh" n'en sont pas.
+</p>
+
+<p>
+    Deux textes vous sont donnés. Il vous faut déterminer si ce sont des anagrammes.
+</p>
+
+
+<p>
+    <strong>Input: </strong> Deux chaînes de caractères (string).
+</p>
+
+<p>
+    <strong>Output: </strong> Sont-elles des anagrammes, comme boolean (True ou False).
+</p>
+
+
+<div class="for_info_only">
+    <p>
+        <strong>Exemple:</strong>
+    </p>
+    <pre class="brush: python">
+verify_anagrams("Programming", "Gram Ring Mop") == True
+verify_anagrams("Hello", "Ole Oh") == False
+verify_anagrams("Kyoto", "Tokyo") == True
+    </pre>
+</div>
+
+<p class="for_info_only">
+    <strong>Application: </strong>
+    La recherche d'anagramme est un moyen ludique d'exercer votre cerveau, mais il a d'autres applications.
+    Des psychologues utilisent des tests basés sur la recherche d'anagrammes pour évaluer la mémoire implicite.
+    Les anagrammes sont liées aux pseudonymes, par le fait qu'elles peuvent cacher ou révéler,
+    ou agir comme une sorte de masque qui peut établir l'identité.
+    De plus, la recherche d'anagrammes multiples est une technique utilisée parfois pour résoudre certains types de cryptogrammes.
+</p>
+
+<p>
+    <strong>Préconditions: </strong>
+    0 < |first_word| < 100;<br>
+    0 < |second_word| < 100;<br>
+    Les textes ne contiennent que des lettres latines ASCII et des espaces.
+</p>

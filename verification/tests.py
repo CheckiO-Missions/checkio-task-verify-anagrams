@@ -115,5 +115,10 @@ TESTS = {
             "answer": False,
             "common": "ab"
         },
+        {
+            "input": ["a", "abcd"],
+            "answer": False,
+            "common": "a"
+        },
     ]
 }

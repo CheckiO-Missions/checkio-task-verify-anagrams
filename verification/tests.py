@@ -9,7 +9,7 @@ Each test is dict with
 
 
 TESTS = {
-    "0. Basics": [
+    "Basics": [
         {
             "input": ["Programming", "Gram Ring Mop"],
             "answer": True,
@@ -28,7 +28,7 @@ TESTS = {
         }
 
     ],
-    "1. Extra": [
+    "Extra": [
         {
             "input": ["Hamlet", "Amleth"],
             "answer": True,
@@ -72,7 +72,7 @@ TESTS = {
         },
 
     ],
-    "2. Edge": [
+    "Edge": [
         {
             "input": ["a", "a"],
             "answer": True,

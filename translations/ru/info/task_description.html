@@ -25,17 +25,15 @@
         <strong>Примеры:</strong>
     </p>
     {% if interpreter.slug == "js-node" %}
-<pre class="brush: python">
-verifyAnagrams("Programming", "Gram Ring Mop") == true
-verifyAnagrams("Hello", "Ole Oh") == false
-verifyAnagrams("Kyoto", "Tokyo") == true
-    </pre>
+<pre class="brush: python">verify_anagrams('Programming', 'Gram Ring Mop') == True
+verify_anagrams('Hello', 'Ole Oh') == False
+verify_anagrams('Kyoto', 'Tokyo') == True
+</pre>
 {% else %}
-<pre class="brush: python">
-verify_anagrams("Programming", "Gram Ring Mop") == True
-verify_anagrams("Hello", "Ole Oh") == False
-verify_anagrams("Kyoto", "Tokyo") == True
-    </pre>
+<pre class="brush: python">verify_anagrams('Programming', 'Gram Ring Mop') == True
+verify_anagrams('Hello', 'Ole Oh') == False
+verify_anagrams('Kyoto', 'Tokyo') == True
+</pre>
 {% endif %}
 </div>
 

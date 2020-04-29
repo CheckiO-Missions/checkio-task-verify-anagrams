@@ -1,14 +1,16 @@
-"use strict";
+import assert from "assert";
 
-function verifyAnagrams(first_word, second_word){
-    return true || false;
+function verifyAnagrams(line1: string, line2: string): boolean {
+    // your code here
+    return false;
 }
 
-var assert = require('assert');
+console.log('Example:');
+console.log(verifyAnagrams('Programming', 'Gram Ring Mop'));
 
-if (!global.is_checking) {
-    assert.equal(verifyAnagrams("Programming", "Gram Ring Mop"), true, "Gram of code");
-    assert.equal(verifyAnagrams("Hello", "Ole Oh"), false, "Hello! Ole Oh!");
-    assert.equal(verifyAnagrams("Kyoto", "Tokyo"), true, "The global warming crisis of 3002");
-    console.log("Coding complete? Click 'Check' to review your tests and earn cool rewards!");
-}
+// These "asserts" are used for self-checking
+assert.equal(verifyAnagrams('Programming', 'Gram Ring Mop'), true);
+assert.equal(verifyAnagrams('Hello', 'Ole Oh'), false);
+assert.equal(verifyAnagrams('Kyoto', 'Tokyo'), true);
+
+console.log("Coding complete? Click 'Check' to earn cool rewards!");

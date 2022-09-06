@@ -12,33 +12,23 @@
 
 
 <p>
-    <strong>Input: </strong> Deux chaînes de caractères (string).
+    <strong>Input:</strong> Deux chaînes de caractères (string).
 </p>
 
 <p>
-    <strong>Output: </strong> Sont-elles des anagrammes, comme boolean (True ou False).
+    <strong>Output:</strong> Sont-elles des anagrammes, comme boolean (True ou False).
 </p>
 
 
 <div class="for_info_only">
     <p>
-        <strong>Exemple:</strong>
+        <strong>Exemples:</strong>
     </p>
-    {% if interpreter.slug == "js-node" %}
-<pre class="brush: python">verify_anagrams('Programming', 'Gram Ring Mop') == True
-verify_anagrams('Hello', 'Ole Oh') == False
-verify_anagrams('Kyoto', 'Tokyo') == True
-</pre>
-{% else %}
-<pre class="brush: python">verify_anagrams('Programming', 'Gram Ring Mop') == True
-verify_anagrams('Hello', 'Ole Oh') == False
-verify_anagrams('Kyoto', 'Tokyo') == True
-</pre>
-{% endif %}
+<pre class="brush: {% if is_js %}javascript{% else %}python{% endif %}">{{init_code_tmpl}}</pre>
 </div>
 
 <p class="for_info_only">
-    <strong>Application: </strong>
+    <strong>Application:</strong>
     La recherche d'anagramme est un moyen ludique d'exercer votre cerveau, mais il a d'autres applications.
     Des psychologues utilisent des tests basés sur la recherche d'anagrammes pour évaluer la mémoire implicite.
     Les anagrammes sont liées aux pseudonymes, par le fait qu'elles peuvent cacher ou révéler,
@@ -47,8 +37,10 @@ verify_anagrams('Kyoto', 'Tokyo') == True
 </p>
 
 <p>
-    <strong>Préconditions: </strong>
-    0 < |first_word| < 100;<br>
-    0 < |second_word| < 100;<br>
-    Les textes ne contiennent que des lettres latines ASCII et des espaces.
+    <strong>Préconditions:</strong>
+    <ul>
+        <li>0 < |first_word| < 100;</li>
+        <li>0 < |second_word| < 100;</li>
+        <li>Les textes ne contiennent que des lettres latines ASCII et des espaces.</li>
+    </ul>
 </p>

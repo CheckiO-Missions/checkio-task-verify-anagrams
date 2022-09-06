@@ -13,35 +13,23 @@
 
 
 <p>
-    <strong>Input: </strong> Two arguments as strings.
+    <strong>Input:</strong> Two arguments as strings.
 </p>
 
 <p>
-    <strong>Output: </strong> Are they anagrams or not as boolean (True or False)
+    <strong>Output:</strong> Are they anagrams or not as boolean (True or False)
 </p>
 
 
 <div class="for_info_only">
     <p>
-        <strong>Example:</strong>
+        <strong>Examples:</strong>
     </p>
-    {% if interpreter.slug == "js-node" %}
-<pre class="brush: python">verifyAnagrams('Programming', 'Gram Ring Mop') == True
-verifyAnagrams('Hello', 'Ole Oh') == False
-verifyAnagrams('Kyoto', 'Tokyo') == True
-</pre>
-{% else %}
-<pre class="brush: python">verify_anagrams('Programming', 'Gram Ring Mop') == True
-verify_anagrams('Hello', 'Ole Oh') == False
-verify_anagrams('Kyoto', 'Tokyo') == True
-</pre>
-{% endif %}
-
-    
+<pre class="brush: {% if is_js %}javascript{% else %}python{% endif %}">{{init_code_tmpl}}</pre>
 </div>
 
 <p class="for_info_only">
-    <strong>How it is used: </strong>
+    <strong>How it is used:</strong>
     Anagramming can be a fun way to train your brain, but they have and another application.
     Psychologists use anagram-oriented tests, often called "anagram solution tasks", to assess the implicit memory.
     Anagrams are connected to pseudonyms, by the fact that they may conceal or reveal,
@@ -50,9 +38,10 @@ verify_anagrams('Kyoto', 'Tokyo') == True
 </p>
 
 <p>
-    <strong>Precondition: </strong>
-    0 < |first_word| < 100;<br>
-    0 < |second_word| < 100;<br>
-    Words contain only ASCII latin letters and whitespaces.
-
+    <strong>Preconditions:</strong>
+    <ul>
+    <li>0 < |first_word| < 100;</li>
+    <li>0 < |second_word| < 100;</li>
+    <li>Words contain only ASCII latin letters and whitespaces.</li>
+    </ul>
 </p>

@@ -12,11 +12,11 @@
 
 
 <p>
-    <strong>Входные данные: </strong> Два аргумента, как строки (str, unicode).
+    <strong>Входные данные:</strong> Два аргумента, как строки (str, unicode).
 </p>
 
 <p>
-    <strong>Выходные данные: </strong> Анаграммы это или нет, как булево значение (True или False)
+    <strong>Выходные данные:</strong> Анаграммы это или нет, как булево значение (True или False)
 </p>
 
 
@@ -24,30 +24,23 @@
     <p>
         <strong>Примеры:</strong>
     </p>
-    {% if interpreter.slug == "js-node" %}
-<pre class="brush: python">verify_anagrams('Programming', 'Gram Ring Mop') == True
-verify_anagrams('Hello', 'Ole Oh') == False
-verify_anagrams('Kyoto', 'Tokyo') == True
-</pre>
-{% else %}
-<pre class="brush: python">verify_anagrams('Programming', 'Gram Ring Mop') == True
-verify_anagrams('Hello', 'Ole Oh') == False
-verify_anagrams('Kyoto', 'Tokyo') == True
-</pre>
-{% endif %}
+<pre class="brush: {% if is_js %}javascript{% else %}python{% endif %}">{{init_code_tmpl}}</pre>
 </div>
 
 <p class="for_info_only">
-    <strong>Связь с реальной жизнью: </strong>
+    <strong>Связь с реальной жизнью:</strong>
     Составление анаграмм - это полезная и веселая разминка для мозга, но это не единственное ее применение.
     Психологи используют основанные на анаграммах тесты, чтобы добраться до воспоминаний.
     Анаграммы часто используют в псевдонимах. А также анаграммы используются в некоторых методиках для шифрования текстов .
 </p>
 
 <p>
-    <strong>Предусловия: </strong>
-    0 < |first_word| < 100;<br>
-    0 < |second_word| < 100;<br>
-    Слова состоят только латинских ASCII букв и пробелов.
-
+    <strong>Предусловия:</strong>
+    <ul>
+        <li>0 < |first_word| < 100;</li>
+        <li>0 < |second_word| < 100;</li>
+        <li>Слова состоят только из латинских ASCII букв и пробелов.</li>
+    </ul>
+    <br>
+    <br>
 </p>

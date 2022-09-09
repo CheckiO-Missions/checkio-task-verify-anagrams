@@ -1,0 +1,152 @@
+<body data-author="freeman_lex">
+<div class="question-answer">
+    <div class="question">
+        Я не маю уявлення, як почати розв'язок цієї місії.
+    </div>
+    <div class="answer">
+        Загальна ідея, яку я тобі пропоную використати, це створити сортовані
+        списки з символів в одному регістрі, відмінних від пробілу, з обох
+        вхідних рядків і порівняти їх.
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        З якого інструменту мені варто розпочати?
+    </div>
+    <div class="answer">
+        Щоб зробити всі літери в рядку в одному регістрі, використай рядкові методи
+        <a target="_blank" href="https://www.w3schools.com/python/ref_string_lower.asp">str.lower()</a>
+        або <a target="_blank" href="https://www.w3schools.com/python/ref_string_upper.asp">str.upper()</a>.
+        <br />
+        <br />
+        <pre class="brush: python">
+a = "HeLlO"
+a.lower()
+print(a)
+
+# output
+"hello"
+        </pre>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        Що робити далі? Потрібна підказка.
+    </div>
+    <div class="answer">
+        Щоб усунути пробіли, використай рядковий метод 
+        <a target="_blank" href="https://www.w3schools.com/python/ref_string_isalpha.asp">str.isalpha()</a>
+        для перевірки чи символ є літерою.
+        <br />
+        <br />
+        <pre class="brush: python">
+a = "H"
+print(a.isalpha())
+
+# output
+True
+        </pre>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        Я не розумію, як поєднати ці підказки.
+    </div>
+    <div class="answer">
+        Використай попередні дві підказки і <a target="_blank" href="https://www.w3schools.com/python/python_lists_comprehension.asp">списковий вираз</a>,
+        щоб вибрати з рядка у нижньому регістрі символи, що не є пробілом. Використай
+        цей вираз як аргумент в функції <a target="_blank" href="https://www.w3schools.com/python/python_lists_comprehension.asp">sorted()</a>.        
+        <br />
+        <br />
+        <pre class="brush: python">
+sorted(x for x in s.lower() if x.isalpha())        
+        </pre>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        Як мені використати цей вираз для розв'язку місії?
+    </div>
+    <div class="answer">
+        Щоб писати цей вираз лише раз у функції і щоб зробити код функції чистішим,
+        я пропоную тобі створити додаткову функцію для перетворення слова або фрази відповідно до 
+        цього виразу. Крім тго, це зробить простішим керування змінами, якщо тобі
+        потрібно буде змінити алгоритм конвертування.
+        <br />
+        <br />
+        <pre class="brush: python">
+def convert(s):
+
+    return sorted(x for x in s.lower() if x.isalpha())            
+        </pre>
+        У головній функції просто викличи функцію convert для обох вхідних рядків,
+        порівняй результати і поверни, чи рядки однакові.
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        То як має виглядати мій остаточний розв'язок?
+    </div>
+    <div class="answer">
+        Ось він:
+        <br />
+        <br />
+        <pre class="brush: python">
+def verify_anagrams(a, b):
+    
+    return convert(a) == convert(b)
+        
+def convert(s):
+            
+    return sorted(x for x in s.lower() if x.isalpha())          
+        </pre>
+        Ти можеш використати lambda вираз (анонімну функцію) і функцію
+        <a target="_blank" href="https://www.w3schools.com/python/ref_func_filter.asp">filter()</a>,
+        щоб зробити розв'язок більш компактним.
+        <br />
+        <br />
+        <pre class="brush: python">
+verify_anagrams = lambda a, b: convert(a) == convert(b)
+
+convert = lambda s: sorted(filter(lambda x: x.isalpha(), s.lower()))  
+        </pre>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        Покажи мені більше розв'язків!<br />
+        Адже я хочу стати справжнім Python Ніндзею!
+    </div>
+    <div class="answer">
+        Звісно, тримай!<br />
+        Інший спосіб позбутися пробілів, це замінити їх порожнім рядком:
+        <br />
+        <br />
+        <pre class="brush: python">
+def verify_anagrams(a,b):
+
+    return sorted(a.lower().replace(' ',''))\
+    == sorted(b.lower().replace(' ',''))
+        </pre>
+        І ще інший спосіб - використати рядковий метод <a target="_blank" href="https://www.w3schools.com/python/ref_string_split.asp">str.split()</a>.
+        <br />
+        <br />
+        <pre class="brush: python">
+def verify_anagrams(first_word, second_word):
+
+    rs = lambda x: sorted("".join(x.lower().split()))
+    
+    return rs(first_word) == rs(second_word)
+        </pre>
+        Тисни "Best solutions" в меню місії і побачиш багато інших цікавих розв'язків!
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        Дякую! Тепер я знаю і розумію більше! Все працює як слід!
+    </div>
+    <div class="answer">
+        Приємно це чути!
+    </div>
+</div>
+</body>

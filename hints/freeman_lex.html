@@ -1,0 +1,152 @@
+<body data-author="freeman_lex">
+<div class="question-answer">
+    <div class="question">
+        I have no idea how to start solving this mission.
+    </div>
+    <div class="answer">
+        The general idea I offer you to use is to make sorted lists from
+        same case non-whitespace characters of both strings and compare them.
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        What instrument should I start from?
+    </div>
+    <div class="answer">
+        To make all letters in a string of same case use string methods
+        <a target="_blank" href="https://www.w3schools.com/python/ref_string_lower.asp">str.lower()</a>
+        or <a target="_blank" href="https://www.w3schools.com/python/ref_string_upper.asp">str.upper()</a>.
+        <br />
+        <br />
+        <pre class="brush: python">
+a = "HeLlO"
+a.lower()
+print(a)
+
+# output
+"hello"
+        </pre>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        What to do next? I need a hint.
+    </div>
+    <div class="answer">
+        To loose whitespaces use string method
+        <a target="_blank" href="https://www.w3schools.com/python/ref_string_isalpha.asp">str.isalpha()</a>
+        to check if the character is a letter.
+        <br />
+        <br />
+        <pre class="brush: python">
+a = "H"
+print(a.isalpha())
+
+# output
+True
+        </pre>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        I don't understand how to join this hints.
+    </div>
+    <div class="answer">
+        Use previous two hints and <a target="_blank" href="https://www.w3schools.com/python/python_lists_comprehension.asp">list comprehension</a>
+        to select from lowercase word non-whitespace characters. Use this comprehension
+        as argument of <a target="_blank" href="https://www.w3schools.com/python/python_lists_comprehension.asp">sorted()</a> function.        
+        <br />
+        <br />
+        <pre class="brush: python">
+sorted(x for x in s.lower() if x.isalpha())        
+        </pre>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        How should I use this expressions to solve the mission?
+    </div>
+    <div class="answer">
+        In order to write this expression ones in solution, to make solution
+        cleaner I offer you to create additional function to convert a word or
+        phrase according to this expression. In such case its also easer to manage
+        changes in code if you want to change the algorithm of converting.
+        <br />
+        <br />
+        <pre class="brush: python">
+def convert(s):
+
+    return sorted(x for x in s.lower() if x.isalpha())            
+        </pre>
+        In main function just call convert function for both input strings,
+        compare results and return if they equal or not.
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        So, how my final solution should look like?
+    </div>
+    <div class="answer">
+        Here it is:
+        <br />
+        <br />
+        <pre class="brush: python">
+def verify_anagrams(a, b):
+    
+    return convert(a) == convert(b)
+        
+def convert(s):
+            
+    return sorted(x for x in s.lower() if x.isalpha())          
+        </pre>
+        You may use lambda expression (anonymous function) and
+        <a target="_blank" href="https://www.w3schools.com/python/ref_func_filter.asp">filter()</a>
+        function to make this solution more compact.
+        <br />
+        <br />
+        <pre class="brush: python">
+verify_anagrams = lambda a, b: convert(a) == convert(b)
+
+convert = lambda s: sorted(filter(lambda x: x.isalpha(), s.lower()))  
+        </pre>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        Show me more solutions!<br />
+        'Cause I wanna be a real Python Ninnjaa!
+    </div>
+    <div class="answer">
+        Sure, grab it!<br />
+        Another way to get rid of whitespaces is to replace them with empty string:
+        <br />
+        <br />
+        <pre class="brush: python">
+def verify_anagrams(a,b):
+
+    return sorted(a.lower().replace(' ',''))\
+    == sorted(b.lower().replace(' ',''))
+        </pre>
+        And another way - to use string method <a target="_blank" href="https://www.w3schools.com/python/ref_string_split.asp">str.split()</a>.
+        <br />
+        <br />
+        <pre class="brush: python">
+def verify_anagrams(first_word, second_word):
+
+    rs = lambda x: sorted("".join(x.lower().split()))
+
+    return rs(first_word) == rs(second_word)
+        </pre>
+        Click "Best solutions" at mission menu and see a lot of other
+        interesting solutions!
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        Thanks! I know and understand more now! Everything works fine!
+    </div>
+    <div class="answer">
+        Glad to hear it!
+    </div>
+</div>
+</body>

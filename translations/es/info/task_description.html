@@ -13,32 +13,22 @@
 
 
 <p>
-    <strong>Input: </strong> Dos argumentos de tipo string.
+    <strong>Input:</strong> Dos argumentos de tipo string.
 </p>
 
 <p>
-    <strong>Output: </strong> Confirmar o desmentir si son anagramas como booleano (True o False)
+    <strong>Output:</strong> Confirmar o desmentir si son anagramas como booleano (True o False)
 </p>
 
 <div class="for_info_only">
     <p>
-        <strong>Example:</strong>
+        <strong>Examples:</strong>
     </p>
-    {% if interpreter.slug == "js-node" %}
-<pre class="brush: python">verify_anagrams('Programming', 'Gram Ring Mop') == True
-verify_anagrams('Hello', 'Ole Oh') == False
-verify_anagrams('Kyoto', 'Tokyo') == True
-</pre>
-{% else %}
-<pre class="brush: python">verify_anagrams('Programming', 'Gram Ring Mop') == True
-verify_anagrams('Hello', 'Ole Oh') == False
-verify_anagrams('Kyoto', 'Tokyo') == True
-</pre>
-{% endif %}
-
+<pre class="brush: {% if is_js %}javascript{% else %}python{% endif %}">{{init_code_tmpl}}</pre>
+</div>
 
 <p class="for_info_only">
-    <strong>Para qué se usa: </strong>
+    <strong>Para qué se usa:</strong>
     Anagramming puede ser una divertidad manera de entrenar el cerebro, pero tiene otras aplicaciones.
     Los piscologos usan tests basados en anagramas, normalmente llamados "anagram solution tasks", para evaluar la memoria implicita.
     Los anagramas están conectados con los pseudonimos, por el hecho de que pueden ocultar o revelar,
@@ -47,9 +37,10 @@ verify_anagrams('Kyoto', 'Tokyo') == True
 </p>
 
 <p>
-    <strong>Condicion previa: </strong>
-    0 &lt; |primera palabra| &lt; 100;<br>
-    0 &lt; |segunda palabra| &lt; 100;<br>
-    Las palabras solo contienen letras latinas ASCII y espacios en blanco.
-
+    <strong>Condicion previa:</strong>
+    <ul>
+        <li>0 &lt; |primera palabra| &lt; 100;</li>
+        <li>0 &lt; |segunda palabra| &lt; 100;</li>
+        <li>Las palabras solo contienen letras latinas ASCII y espacios en blanco.</li>
+    </ul>
 </p>

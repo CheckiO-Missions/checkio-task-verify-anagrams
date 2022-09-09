@@ -4,7 +4,7 @@
         I have no idea how to start solving this mission.
     </div>
     <div class="answer">
-        The general idea I offer you to use is to make sorted sequence from
+        The general idea I offer you to use is to make sorted lists from
         same case non-whitespace characters of both strings and compare them.
     </div>
 </div>
@@ -19,12 +19,12 @@
         <br />
         <br />
         <pre class="brush: python">
-    a = "HeLlO"
-    a.lower()
-    print(a)
-    
-    # output
-    "hello"
+a = "HeLlO"
+a.lower()
+print(a)
+
+# output
+"hello"
         </pre>
     </div>
 </div>
@@ -67,8 +67,10 @@ sorted(x for x in s.lower() if x.isalpha())
         How should I use this expressions to solve the mission?
     </div>
     <div class="answer">
-        Create additional function to convert a word or phrase according to this
-        expression.
+        In order to write this expression ones in solution, to make solution
+        cleaner I offer you to create additional function to convert a word or
+        phrase according to this expression. In such case its also easer to manage
+        changes in code if you want to change the algorithm of converting.
         <br />
         <br />
         <pre class="brush: python">

@@ -1,0 +1,152 @@
+<body data-author="freeman_lex">
+<div class="question-answer">
+    <div class="question">
+        Ich habe keine Ahnung, wie ich mit der Lösung dieser Aufgabe beginnen soll.
+    </div>
+    <div class="answer">
+        Die allgemeine Idee, die ich Ihnen vorschlage, ist die Erstellung sortierter Listen aus
+        gleichen Groß-/Kleinschreibung und Nicht-Whitespace-Zeichen der beiden Strings zu erstellen und diese zu vergleichen.
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        Mit welchem Instrument soll ich beginnen?
+    </div>
+    <div class="answer">
+        Um alle Buchstaben in einer Zeichenkette mit der gleichen Groß-/Kleinschreibung zu versehen, verwenden Sie die String-Methoden
+       <a target="_blank" href="https://www.w3schools.com/python/ref_string_lower.asp">str.lower()</a>
+        oder <a target="_blank" href="https://www.w3schools.com/python/ref_string_upper.asp">str.upper()</a>.
+       <br />
+        <br />
+       <pre class="brush: python">
+a = "HeLlO"
+a = a.lower()
+print(a)
+
+# output
+# hello
+        </pre>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        Was ist als nächstes zu tun? Ich brauche einen Tipp.
+    </div>
+    <div class="answer">
+        Um Leerzeichen zu verlieren, verwenden Sie die String-Methode
+       <a target="_blank" href="https://www.w3schools.com/python/ref_string_isalpha.asp">str.isalpha()</a>
+        um zu prüfen, ob das Zeichen ein Buchstabe ist.
+       <br />
+        <br />
+       <pre class="brush: python">
+a = "H"
+print(a.isalpha())
+
+# output
+# True
+        </pre>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        Ich verstehe nicht, wie man diesen Hinweisen beitreten kann.
+    </div>
+    <div class="answer">
+        Verwenden Sie die beiden vorherigen Hinweise und <a target="_blank" href="https://www.w3schools.com/python/python_lists_comprehension.asp">list comprehension</a>
+        um aus Kleinbuchstaben ohne Leerzeichen auszuwählen. Verwenden Sie dieses Verständnis
+        als Argument der Funktion <a target="_blank" href="https://www.w3schools.com/python/python_lists_comprehension.asp">sorted()</a>.        
+       <br />
+        <br />
+       <pre class="brush: python">
+sorted(x for x in s.lower() if x.isalpha())        
+        </pre>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        Wie sollte ich diese Ausdrücke verwenden, um die Mission zu lösen?
+    </div>
+    <div class="answer">
+        Um diesen Ausdruck in die Lösung zu schreiben, um die Lösung
+        sauberer zu machen, biete ich Ihnen an, eine zusätzliche Funktion zu erstellen, um ein Wort oder einen
+        phrase entsprechend diesem Ausdruck umzuwandeln. In diesem Fall ist es auch einfacher, Änderungen im Code zu verwalten
+        änderungen im Code zu verwalten, wenn Sie den Algorithmus der Konvertierung ändern möchten.
+       <br />
+        <br />
+       <pre class="brush: python">
+def convert(s):
+
+    return sorted(x for x in s.lower() if x.isalpha())            
+        </pre>
+        Rufen Sie in der Hauptfunktion einfach die Funktion convert für beide Eingabestrings auf,
+        vergleichen Sie die Ergebnisse und geben Sie zurück, ob sie gleich sind oder nicht.
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        Wie sollte also meine endgültige Lösung aussehen?
+    </div>
+    <div class="answer">
+        Hier ist sie:
+       <br />
+        <br />
+       <pre class="brush: python">
+def verify_anagrams(a, b):
+    
+    return convert(a) == convert(b)
+        
+def convert(s):
+            
+    return sorted(x for x in s.lower() if x.isalpha())          
+        </pre>
+        Sie können Lambda-Ausdrücke (anonyme Funktionen) verwenden und
+       <a target="_blank" href="https://www.w3schools.com/python/ref_func_filter.asp">filter()</a>
+        funktion verwenden, um diese Lösung kompakter zu gestalten.
+       <br />
+        <br />
+       <pre class="brush: python">
+verify_anagrams = lambda a, b: convert(a) == convert(b)
+
+convert = lambda s: sorted(filter(lambda x: x.isalpha(), s.lower()))  
+        </pre>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        Zeigen Sie mir mehr Lösungen!<br />
+        denn ich möchte ein echter Python Ninnjaa sein!
+    </div>
+    <div class="answer">
+        Sicher, greifen Sie zu!<br />
+        Eine andere Möglichkeit, Whitespaces loszuwerden, besteht darin, sie durch leere Strings zu ersetzen:
+       <br />
+        <br />
+       <pre class="brush: python">
+def verify_anagrams(a,b):
+
+    return sorted(a.lower().replace(' ',''))\
+    == sorted(b.lower().replace(' ',''))
+        </pre>
+        Und eine andere Möglichkeit ist die Verwendung der String-Methode <a target="_blank" href="https://www.w3schools.com/python/ref_string_split.asp">str.split()</a>.
+       <br />
+        <br />
+       <pre class="brush: python">
+def verify_anagrams(first_word, second_word):
+
+    rs = lambda x: sorted("".join(x.lower().split()))
+
+    return rs(first_word) == rs(second_word)
+        </pre>
+        Klicken Sie im Missionsmenü auf "Beste Lösungen" und sehen Sie sich viele andere
+        interessante Lösungen!
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        Danke! Ich weiß und verstehe jetzt mehr! Alles funktioniert bestens!
+    </div>
+    <div class="answer">
+        Freut mich zu hören!
+    </div>
+</div>
+</body>
